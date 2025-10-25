@@ -4,13 +4,19 @@ randomize ();
 var cam = instance_create_layer(x, y, layer, obj_camera);
 cam.alvo = id;
 
+pontos_status = 0;
+forca = 1;
+resistencia = 1;
+velocidade = 1;
+
+
 jump_delay = 0;
 
 velh     = 0;
 velv     = 0;
 vel      = 4;
 grav     = 0.3;
-vel_jump = 6;
+vel_jump = 6.5;
 dash_vel = 3;
 
 

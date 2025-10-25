@@ -1,3 +1,12 @@
+if (instance_number(obj_xp_sistema) > 1) {
+    instance_destroy();
+    exit;
+}
+
+
+persistent = true;
+
+
 // Variáveis de experiência
 nivel = 1;
 xp_atual = 0;
@@ -7,4 +16,5 @@ xp_total = 0;
 // Fonte e posição na tela (opcional)
 pos_x = 20;
 pos_y = 20;
+
 

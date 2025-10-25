@@ -1,6 +1,7 @@
 //checando se o objeto transiçao existe
 if (instance_exists(obj_mundadodefase))   exit;
 
+
 // controlando a minha invncibilidad
 if (invencivel && tempo_invencivel > 0 )
 {

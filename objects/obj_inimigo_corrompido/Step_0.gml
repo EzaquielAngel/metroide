@@ -198,7 +198,7 @@ case "dead":
 		image_alpha -= .01;
 		
 		if (instance_exists(obj_xp_sistema)) {
-    ganhar_xp(0.5); // o valor pode mudar conforme o inimigo
+    ganhar_xp(1); // o valor pode mudar conforme o inimigo
 }
 
 		
