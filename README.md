@@ -92,8 +92,6 @@ Git é um sistema de **controle de versão**. Ele permite salvar e acompanhar mu
 O site [Roadmap.sh](https://roadmap.sh/game-developer) apresenta um **roadmap detalhado para se tornar um desenvolvedor de jogos em 2025**.
 Esse roadmap funciona como um guia visual e incremental: ele lista as áreas de conhecimento, ferramentas e tecnologias que alguém trabalhando com jogos pode estudar — desde fundamentos até níveis mais avançados.  
 
----
-
 ### A Lista “Awesome” de Recursos  
 O repositório [awesome](https://github.com/sindresorhus/awesome?tab=readme-ov-file#front-end-development) mantido por Sindre Sorhus é uma **coleção enorme de listas de links para recursos de programação, design, ferramentas, frameworks, aprendizado**.
 No contexto de desenvolvimento de jogos, essa lista inclui desde categorias como *Game Development*, *Game-Engine Development*, *Gaming*, até listas de frameworks, tutoriais, ativos, design de áudio e muito mais.
