@@ -22,4 +22,5 @@ dano = noone;
 ataque = 8;
 posso = true;
 
+estado = "parado";
 

@@ -1,49 +1,51 @@
-/// Step Event
 
+// --- Detectar chão ---
 var _chao = place_meeting(x, y + 1, chao_Obj);
+if (!_chao) vsp += grav * global.vel_multi;
+else vsp = 0;
 
-// Gravidade
-if (!_chao) {
-    vsp += grav * global.vel_multi;
-} else {
-    vsp = 0;
+// --- Detectar colisão com objeto de dano ---
+if (place_meeting(x, y, obj_dano) && estado != "hit") {
+    vida_atual -= 1;
+    estado = "hit";
+    image_index = 0;
 }
 
-// Distância até o player
+// --- Se a vida acabar ---
+if (vida_atual <= 0) {
+    instance_destroy();
+}
+
+// --- Distância até o player ---
 var _dist_player = point_distance(x, y, Prota_Obj.x, Prota_Obj.y);
+var visao = 250;
+var dist_min = 100;
 
-// Limites de visão e distância mínima pra parar
-var visao = 250;     // distância máxima pra começar a perseguir
-var dist_min = 100;   // distância mínima — para de andar quando chega perto
-
-// Troca de estado
-if (_dist_player < visao && _dist_player > dist_min && estado != "perseguir") {
-    estado = "perseguir";
-}
-else if (_dist_player <= dist_min && estado != "parado_perto") {
-    estado = "parado_perto"; // perto o bastante, espera pra atacar
-}
-else if (_dist_player >= visao && estado != "parado") {
-    estado = "parado";
-}
-
-// --- Comportamento de cada estado ---
+// --- Sistema de estados ---
 switch (estado)
 {
     case "parado":
         {
             hsp = 0;
             sprite_index = Spr_guarda_idle;
+
+            if (_dist_player < visao && _dist_player > dist_min) estado = "perseguir";
         }
         break;
 
     case "perseguir":
         {
-            if (Prota_Obj.x < x) dir = -1;
-            else dir = 1;
-
-            hsp = dir * 1.5;
-            sprite_index = Spr_guarda_walk;
+            if (_dist_player < visao && _dist_player > dist_min) {
+                if (Prota_Obj.x < x) dir = -1; else dir = 1;
+                hsp = dir * 1.5;
+                sprite_index = Spr_guarda_walk;
+            }
+            else if (_dist_player <= dist_min) {
+                estado = "parado_perto";
+            }
+            else if (_dist_player >= visao) {
+                estado = "parado";
+            }
         }
         break;
 
@@ -52,19 +54,31 @@ switch (estado)
             hsp = 0;
             sprite_index = Spr_guarda_idle;
 
-            // aqui depois você pode colocar o ataque
-            // ex: if (timer_estado > 60) { estado = "atacar"; }
+            if (_dist_player > dist_min) estado = "perseguir";
+        }
+        break;
+
+    case "hit":
+        {
+            hsp = 0;
+            sprite_index = Spr_guarda_hurt;
+
+            // quando a animação de hit termina, volta ao comportamento normal
+            if (image_index >= image_number - 1) {
+                if (_dist_player < visao && _dist_player > dist_min) estado = "perseguir";
+                else if (_dist_player <= dist_min) estado = "parado_perto";
+                else estado = "parado";
+            }
         }
         break;
 }
 
-// Movimento horizontal
+// --- Movimento ---
 if (!place_meeting(x + hsp, y, chao_Obj)) {
     x += hsp;
 }
-
-// Aplicar movimento vertical
 y += vsp;
 
-// Espelhar sprite
+// --- Espelhar sprite ---
 image_xscale = -dir;
+

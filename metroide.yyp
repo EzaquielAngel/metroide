@@ -80,6 +80,7 @@
     {"id":{"name":"prota_spr","path":"sprites/prota_spr/prota_spr.yy",},},
     {"id":{"name":"spr_cenario","path":"sprites/spr_cenario/spr_cenario.yy",},},
     {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},},
+    {"id":{"name":"Spr_guarda_hurt","path":"sprites/Spr_guarda_hurt/Spr_guarda_hurt.yy",},},
     {"id":{"name":"Spr_guarda_idle","path":"sprites/Spr_guarda_idle/Spr_guarda_idle.yy",},},
     {"id":{"name":"Spr_guarda_walk","path":"sprites/Spr_guarda_walk/Spr_guarda_walk.yy",},},
     {"id":{"name":"spr_inimigo_corrompido_ataque1","path":"sprites/spr_inimigo_corrompido_ataque1/spr_inimigo_corrompido_ataque1.yy",},},
