@@ -52,6 +52,7 @@
     {"id":{"name":"fnt_small","path":"fonts/fnt_small/fnt_small.yy",},},
     {"id":{"name":"chao_Obj","path":"objects/chao_Obj/chao_Obj.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_credito","path":"objects/obj_credito/obj_credito.yy",},},
     {"id":{"name":"obj_dano","path":"objects/obj_dano/obj_dano.yy",},},
     {"id":{"name":"obj_entidade","path":"objects/obj_entidade/obj_entidade.yy",},},
     {"id":{"name":"Obj_estatu_nivel","path":"objects/Obj_estatu_nivel/Obj_estatu_nivel.yy",},},
@@ -71,6 +72,7 @@
     {"id":{"name":"obj_xp_sistema","path":"objects/obj_xp_sistema/obj_xp_sistema.yy",},},
     {"id":{"name":"pardede_Obj","path":"objects/pardede_Obj/pardede_Obj.yy",},},
     {"id":{"name":"Prota_Obj","path":"objects/Prota_Obj/Prota_Obj.yy",},},
+    {"id":{"name":"rm_credito","path":"rooms/rm_credito/rm_credito.yy",},},
     {"id":{"name":"rm_int","path":"rooms/rm_int/rm_int.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
@@ -126,6 +128,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_credito","path":"rooms/rm_credito/rm_credito.yy",},},
     {"roomId":{"name":"rm_int","path":"rooms/rm_int/rm_int.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
